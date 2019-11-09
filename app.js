@@ -32,7 +32,7 @@ const trig = document.getElementById('trig')
     var scanner = new QrScanner(video, result => setResult(camQrResult, result));
     //scanner.start();
 
-    var scanner = null;
+    //var scanner = null;
 
     trig.addEventListener('click', event => {     
         if(trig.textContent == 'Start'){
