@@ -29,7 +29,7 @@ const trig = document.getElementById('trig')
 
     QrScanner.hasCamera().then(hasCamera => camHasCamera.textContent = hasCamera);
 
-    //var scanner = new QrScanner(video, result => setResult(camQrResult, result));
+    var scanner = new QrScanner(video, result => setResult(camQrResult, result));
     //scanner.start();
 
     var scanner = null;
