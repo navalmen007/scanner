@@ -12,13 +12,16 @@ trig.addEventListener('click', event => {
         if(trig.textContent == 'START'){
             
             scanner.start(CamSelected);
-            
+            video.setAttribute("style", "display: block");
             // scanner = new QrScanner(video, result => setResult(camQrResult, result));
             //scanner.start();
             trig.textContent = 'STOP'; 
         }else{
-            trig.textContent = 'START';
             scanner.stop() ;
+
+            trig.textContent = 'START';
+            
+            video.setAttribute("style", "display: none");
         }
     });
 
@@ -41,7 +44,6 @@ scanner.addListener('scan', function (result) {
           
       });
 
-//Instascan.Camera.getCameras().then(function (cameras) { camQrResultTimestamp.textContent = JSON.stringify(cameras)});
 
 Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
