@@ -62,19 +62,29 @@
         width: 100%;
     }
     
-    #qr-video {
+    #video-wrapper{
         position: absolute;
         
         display: block;
-        width: 360px;
+        width: 320px;
         height: 500px;
-        background-color: red;
+        background-color: rgba(204, 199, 199, 0.42);
+        border: 1px solid rgb(0, 255, 48); 
         
         margin-top: 20px;
-        margin-left: calc(50% - 180px);
+        margin-left: calc(50% - 160px);
         margin-right: auto;
         object-fit: cover;
         z-index: -500;
+    }
+    
+    #qr-video {
+        position: absolute;
+        display: none;
+        width: 320px;
+        height: 500px;
+        object-fit: cover;
+        z-index: -50;
     }
     
     #trig{
@@ -134,8 +144,8 @@
 <div class="content">
     <div id='trig'>START</div>
 
-    <div>        
-        <video muted playsinline id="qr-video"></video>
+    <div id="video-wrapper">        
+        <video muted playsinline id="qr-video" poster="./bg.png"></video>
     </div>
 
     <div class="result">
