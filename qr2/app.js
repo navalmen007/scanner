@@ -44,11 +44,13 @@ scanner.addListener('scan', function (result) {
 
 Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
-            if (cameras.length > 1){
-                CamSelected = cameras[1];
-            }else{
-                CamSelected = cameras[1];
-            }
+            var selectedCam = cameras[0];
+                $.each(cameras, (i, c) => {
+                    if (c.name.indexOf('back') != -1) {
+                        selectedCam = c;
+                        return false;
+                    }
+                });
           //scanner.start(cameras[0]);
         } else {
           console.error('No cameras found.');
