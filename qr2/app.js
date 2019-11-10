@@ -47,7 +47,7 @@ Instascan.Camera.getCameras().then(function (cameras) {
             if (cameras.length > 1){
                 CamSelected = cameras[1];
             }else{
-                CamSelected = cameras[0];
+                CamSelected = cameras[1];
             }
           //scanner.start(cameras[0]);
         } else {
