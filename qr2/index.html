@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Scanner Demo</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+      background: #ffffff url("./bg.png") repeat;
+      background-size: cover;    
+    }
+    
+    canvas {
+        display: none;
+    }
+    hr {
+        margin-top: 32px;
+    }
+    input[type="file"] {
+        display: block;
+        margin-bottom: 16px;
+    }
+    
+    .header{
+        background-color: rgba(7, 29, 59, 0.78);
+        padding: 8px 10px;
+        color: #ffffff;
+        height: 40px;
+        
+        box-shadow: 0px 4px 10px #6b8ff2;
+    }
+    .header h1{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        text-align: center;
+        
+    }
+    .DeviceInfo{
+        position: absolute;
+        display: inline-block;
+        float: left;
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 20px;
+    }
+    
+    .content {
+        position: absolute;
+        height: calc(100vh - 60px);
+        width: 100%;
+    }
+    
+    #qr-video {
+        display: block;
+        width: 350px;
+        background-color: red;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #trig{
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 20px;
+        cursor:pointer; 
+
+        position: fixed;
+        
+        bottom: 150px;
+        margin-left: calc(50% - 40px);
+        
+        padding: 20px;
+        
+        background-color: rgba(76, 175, 80, 0.47);
+        color: white;
+        border-radius: 55px;
+        border: 1px solid rgb(0, 255, 48); 
+        box-shadow: 3px 3px 10px #f2a96b;
+        z-index: 1000:
+    }
+    
+    .result{
+        width: 100vw;
+        background-color: #122c4a;
+        padding: 10px 0px;
+        position: fixed;
+        bottom: 0px;
+        box-shadow: 15px 0px 10px #6b8ff2;
+
+    }
+    
+    .result b{
+        margin-left: 20px;
+        padding: 0px;
+        text-transform: uppercase;  
+        color: aliceblue;
+        
+    }
+    
+    #cam-qr-result-timestamp{
+        font-size: 12px;
+    }
+    
+</style>
+<div class="header">
+    <h1> SCAN</h1>
+    <div class="DeviceInfo">
+        <span>CAMERA: </span>
+        <span id="cam-has-camera">OFF</span>
+    </div>   
+</div>
+
+<div class="content">
+    <div id='trig'>START</div>
+
+    <div>        
+        <video muted playsinline id="qr-video"></video>
+    </div>
+
+    <div class="result">
+        <b>Detected QR code: </b> <br>
+        <center><span id="cam-qr-result">None</span></center>
+        <br>
+        <b>Last detected at: </b>
+        <span id="cam-qr-result-timestamp"></span>
+    </div>
+    
+    
+</div>
+
+<!--<script type="module" src="./app.js"></script>-->
+<script type="text/javascript" src="./instascan.min.js"></script>
+<script type="text/javascript" src="./app.js"></script>
+
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instascan</title>
+    <script type="text/javascript" src="./instascan.min.js"></script>
+  </head>
+  <body>
+    <video id="preview"></video>
+    <script type="text/javascript">
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+      });
+      
+    Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+    </script>
+  </body>
+</html>
+
+
+-->
