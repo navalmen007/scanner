@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>QR Scanner Demo</title>
+    <title>menu</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -12,131 +12,72 @@
         margin: 0;
         padding: 0;
     }
-    canvas {
-        display: none;
+    body {
+        background-image: url("./bg2.jpg");
+        background-size: cover;
+        padding-top: 30px;
     }
-    hr {
-        margin-top: 32px;
+    a {
+        text-decoration: none;
+        color: #1a1a1a;
     }
-    input[type="file"] {
-        display: block;
-        margin-bottom: 16px;
+    a:hover {
+        text-decoration: underline;
     }
-    
-    .header{
-        background-color: rgb(162, 162, 239);
-        padding: 8px 10px;
-        color: #ffffff;
-        height: 40px;
-    }
-    .header h1{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        text-align: center;
-        
-    }
-    .DeviceInfo{
-        position: absolute;
-        display: inline-block;
-        float: left;
-        margin-top: auto;
-        margin-bottom: auto;
-        top: 20px;
-    }
-    
-    .content {
-        position: absolute;
-        height: calc(100vh - 60px);
-        width: 100%;
-    }
-    
-    #qr-video {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 60%;
 
-    }
-    
-    #trig{
-        width: 100%;
-        height: 50px;
-        background-color: #499a7f;
-        color: white;
-        text-align: center;
-        line-height: 50px;
+    .link{
+        
+        width: 90%;
+        max-width: 320px;
+        margin: 20px auto;
+
+        padding: 10px;
+        border-radius: 4px;
+        
+        background-color: rgba(157, 150, 162, 0.83);
         font-size: 30px;
-        
-
-        position: fixed;
-        bottom: 0;
+        text-align: center;
     }
     
-    .result{
-        width: 100vw;
-        background-color: gray;
-        padding: 10px 0px;
-        position: fixed;
-        bottom: 50px;
+    .link:hover{
+        background-color: rgba(185, 104, 242, 0.93);
     }
-    
-    .result b{
-        margin-left: 20px;
-        padding: 0px;
-        text-transform: uppercase;  
-        color: aliceblue;
-        
-    }
-    
-    #cam-qr-result-timestamp{
+    .desc{
+        margin-top: 10px;
         font-size: 15px;
+        color: white;
+    }
+    
+    .Num {
+        width: 85px;
+        height: 85px; /* as the half of the width */
+        /*background-color: rgba(214, 98, 219, 0.33); */
+        border-bottom-right-radius: 150px;  /* 100px of height + 10px of border */
+        border-top-right-radius: 0px; /* 100px of height + 10px of border */
+        display:block;
+        position: relative;
+        float: left;
+        top: -10px;
+        left: -10px;
+        text-align: center;
+        line-height: 80px;
+        
+        color: white;
+        font-size: 60px;
+        text-indent: -20px;
+        box-shadow: inset -10px 0px 10px rgba(28, 28, 28, 0.38); 
     }
     
 </style>
-<div class="header">
-    <h1> SCAN</h1>
-    <div class="DeviceInfo">
-        <span>CAMERA: </span>
-        <span id="cam-has-camera">OFF</span>
-    </div>   
-</div>
 
-<div class="content">
-    <div id='trig'>Start</div>
-
-    <div>        
-        <video muted playsinline id="qr-video"></video>
+<a href="https://navalmen007.github.io/qr2/">
+    <div class="link">
+        <div class="Num">1</div>
+        <div class="title">QR Scanner</div>
+        <hr style="color:grey">
+        <div class="desc">App for badge QR</div>
+        <div class="icon"></div>
     </div>
-
-    <div class="result">
-        <b>Detected QR code: </b> <br>
-        <center><span id="cam-qr-result">None</span></center>
-        <br>
-        <b>Last detected at: </b>
-        <span id="cam-qr-result-timestamp"></span>
-    </div>
-    
-    
-</div>
-
-
-<div style="display:none">
-        <select id="inversion-mode-select">
-            <option value="original">Scan original (dark QR code on bright background)</option>
-            <option value="invert">Scan with inverted colors (bright QR code on dark background)</option>
-            <option value="both">Scan both</option>
-        </select>
-        <br>
-    </div>
-
-<div style="display:none">
-    <h1>Scan from File:</h1>
-    <input type="file" id="file-selector">
-    <b>Detected QR code: </b>
-    <span id="file-qr-result">None</span>
-</div>
-<script type="module" src="./app.js"></script>
+</a>
 </body>
 </html>
