@@ -44,10 +44,10 @@ scanner.addListener('scan', function (result) {
 
 Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
-            var selectedCam = cameras[0];
+             CamSelected = cameras[0];
                 $.each(cameras, (i, c) => {
                     if (c.name.indexOf('back') != -1) {
-                        selectedCam = c;
+                        CamSelected = c;
                         return false;
                     }
                 });
