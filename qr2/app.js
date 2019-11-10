@@ -41,9 +41,7 @@ scanner.addListener('scan', function (result) {
           
       });
 
-var cams;
-Instascan.Camera.getCameras().then(function (cameras) { cams = cameras})
-camQrResultTimestamp.textContent = cams;
+Instascan.Camera.getCameras().then(function (cameras) { camQrResultTimestamp.textContent = cameras});
 
 Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
