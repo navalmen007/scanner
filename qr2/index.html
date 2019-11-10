@@ -112,11 +112,12 @@
     
     .result{
         width: 100vw;
-        background-color: #122c4a;
+        background-color: #122c4ae8;
         padding: 10px 0px;
         position: fixed;
         bottom: 0px;
-        box-shadow: 15px 0px 10px #6b8ff2;
+        box-shadow: 0px -8px 24px 3px #000000;
+        z-index: 500;
 
     }
     
@@ -130,6 +131,10 @@
     
     #cam-qr-result-timestamp{
         font-size: 12px;
+    }
+    #cam-qr-result{
+        color: #fb713b;
+        font-size: 20px;
     }
     
 </style>
@@ -150,7 +155,7 @@
 
     <div class="result">
         <b>Detected QR code: </b> <br>
-        <center><span id="cam-qr-result">None</span></center>
+        <center><span id="cam-qr-result">....</span></center>
         <br>
         <b>Last detected at: </b>
         <span id="cam-qr-result-timestamp"></span>
