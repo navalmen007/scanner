@@ -41,14 +41,14 @@ scanner.addListener('scan', function (result) {
           
       });
 
-Instascan.Camera.getCameras().then(function (cameras) { camQrResultTimestamp.textContent = JSON.stringify(cameras)});
+//Instascan.Camera.getCameras().then(function (cameras) { camQrResultTimestamp.textContent = JSON.stringify(cameras)});
 
 Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
              CamSelected = cameras[0];
              for (var i = 0, len = cameras.length; i < len; i++) {
                 if (cameras[i].name.indexOf('back') != -1) {
-                        CamSelected = c;
+                        CamSelected = cameras[i];
                         return false;
                 }
             }
