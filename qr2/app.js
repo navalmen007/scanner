@@ -49,7 +49,7 @@ scanner.addListener('scan', function (result) {
 
 Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
-             CamSelected = cameras[0];
+             CamSelected = cameras[cameras.length];
              for (var i = 0, len = cameras.length; i < len; i++) {
                 if (cameras[i].name.indexOf('back') != -1) {
                         CamSelected = cameras[i];
