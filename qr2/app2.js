@@ -60,6 +60,7 @@ Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
             CamSelected = cameras[0];
             if(cameras.length > 1){
+                flip.style.display = "block";
                 CamSelected = cameras[1];
             }
             
