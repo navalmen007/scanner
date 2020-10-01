@@ -12,7 +12,7 @@ const flip = document.getElementById('DeviceCams')
 
 trig.addEventListener('click', event => {     
         if(trig.textContent == 'START'){
-            
+            alert(CamSelected);
             scanner.start(CamSelected);
             video.setAttribute("style", "display: block");
             // scanner = new QrScanner(video, result => setResult(camQrResult, result));
