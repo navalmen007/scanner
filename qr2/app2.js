@@ -8,7 +8,7 @@
 // ##########  my code //////////##
 const trig = document.getElementById('trig')
 const flip = document.getElementById('DeviceCams')
-flip.style.display = "none";
+//flip.style.display = "none";
 
 trig.addEventListener('click', event => {     
         if(trig.textContent == 'START'){
