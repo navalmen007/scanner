@@ -19,7 +19,11 @@ trig.addEventListener('click', event => {
             //scanner.start();
             trig.textContent = 'STOP'; 
         }else{
-            stopScanner();
+            scanner.stop() ;
+
+            trig.textContent = 'START';
+
+            video.setAttribute("style", "display: none");
         }
     });
 
@@ -51,28 +55,13 @@ scanner.addListener('scan', function (result) {
           
       });
 
-let camN = 0;
 Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
-            camN = 0;
             CamSelected = cameras[0];
             if(cameras.length > 1){
-                flip.style.display = "block";
-                flip.addEventListener("click", function(){
-                    stopScanner();
-                    CamSelected = cameras[1];
-                });
+                CamSelected = cameras[1];
             }
             
- /*            
-             for (var i = 0, len = cameras.length; i < len; i++) {
-                if (cameras[i].name.indexOf('back') != -1) {
-                        CamSelected = cameras[i];
-                        return false;
-                }
-            }
-    */            
-          //scanner.start(cameras[0]);
         } else {
           console.error('No cameras found.');
         }
