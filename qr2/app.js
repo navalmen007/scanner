@@ -56,6 +56,7 @@ scanner.addListener('scan', function (result) {
       });
 
 Instascan.Camera.getCameras().then(function (cameras) {
+    camQrResult.textContent = cameras.length;
         if (cameras.length > 0) {
             CamSelected = cameras[0];
             if(cameras.length > 1){
