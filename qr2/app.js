@@ -51,7 +51,7 @@ scanner.addListener('scan', function (result) {
           
       });
 
-let camN = 0
+let camN = 0;
 Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
             camN = 0;
