@@ -1,85 +1,47 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>menu</title>
+    <title>QR Scanner Demo</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        background-image: url("bg2.jpg");
-        background-size: cover;
-        padding-top: 30px;
-    }
-    a {
-        text-decoration: none;
-        color: #1a1a1a;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .link{
-        
-        width: 90%;
-        max-width: 320px;
-        margin: 20px auto;
-
-        padding: 10px;
-        border-radius: 4px;
-        
-        background-color: rgba(157, 150, 162, 0.83);
-        font-size: 30px;
-        text-align: center;
-        box-shadow: 2px 2px 5px #ffbc93;
-
-    }
-    
-    .link:hover{
-        background-color: rgba(185, 104, 242, 0.93);
-    }
-    .desc{
-        margin-top: 10px;
-        font-size: 15px;
-        color: white;
-    }
-    
-    .Num {
-        width: 85px;
-        height: 85px; /* as the half of the width */
-        /*background-color: rgba(214, 98, 219, 0.33); */
-        border-bottom-right-radius: 150px;  /* 100px of height + 10px of border */
-        border-top-right-radius: 0px; /* 100px of height + 10px of border */
-        display:block;
-        position: relative;
-        float: left;
-        top: -10px;
-        left: -10px;
-        text-align: center;
-        line-height: 80px;
-        
-        color: white;
-        font-size: 60px;
-        text-indent: -20px;
-        box-shadow: inset -10px 0px 10px rgba(28, 28, 28, 0.38); 
-    }
-    
-</style>
-
-<a href="./qr2/">
-    <div class="link">
-        <div class="Num">1</div>
-        <div class="title">QR Scanner</div>
-        <hr style="color:grey">
-        <div class="desc">App for badge QR</div>
-        <div class="icon"></div>
+<div class="header">
+    <h1> SCAN IT</h1>
+    <div class="DeviceInfo">
+        <span></span>
+        <span id="cam-has-camera">ON</span>
     </div>
-</a>
+    <div id="DeviceCams">
+        <img src="flip.png" id="imgFlif">
+    </div>   
+</div>
+
+<div class="content">
+    <div id='trig'>START</div>
+
+    <div id="video-wrapper">        
+        <video muted playsinline id="qr-video" poster="./bg.png"></video>
+    </div>
+
+    <div class="result">
+        <b>Detected QR code: </b> <br>
+        <center><span id="cam-qr-result">....</span></center>
+        <br>
+        <b>Last detected at: </b>
+        <span id="cam-qr-result-timestamp"></span>
+    </div>
+    
+    
+</div>
+
+<!--<script type="module" src="./app.js"></script>-->
+<script type="text/javascript" src="./instascan.min.js"></script>
+<script type="text/javascript" src="./app2.js"></script>
+
 </body>
 </html>
